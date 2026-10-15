@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>说明</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f6f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 48px 40px 36px;
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    animation: popIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+  }
+  h1 {
+    font-size: 20px;
+    color: #1f2329;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  p.desc {
+    font-size: 14px;
+    color: #646a73;
+    line-height: 2;
+    margin-bottom: 28px;
+  }
+  .contact {
+    background: #f5f6f7;
+    border-radius: 10px;
+    padding: 16px 20px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .contact p {
+    font-size: 14px;
+    color: #1f2329;
+    line-height: 2.2;
+  }
+  .contact span.label {
+    display: inline-block;
+    width: 64px;
+    color: #8f959e;
+  }
+  .contact a {
+    color: #3370ff;
+    text-decoration: none;
+  }
+  .contact a:active { opacity: 0.7; }
+  @media (hover: hover) {
+    .contact a:hover { text-decoration: underline; }
+  }
+  .foot {
+    font-size: 12px;
+    color: #8f959e;
+  }
+  .home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 24px;
+    border-radius: 6px;
+    background: #3370ff;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  .home-btn:active { opacity: 0.8; }
+  @media (max-width: 480px) {
+    body { padding: 16px; }
+    .card { padding: 36px 24px 28px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">ℹ️</div>
+    <h1>关于本站</h1>
+    <p class="desc">本网站仅作为个人作品展示与技术交流之用，不定期更新，<br>不构成任何商业用途或正式承诺。<br>如有任何问题或建议，欢迎联系</p>
+    <div class="contact">
+      <!-- <p><span class="label">邮箱</span><a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p><span class="label">电话</span><a href="tel:13800000000">138-0000-0000</a></p>
+      <p><span class="label">微信</span>your-wechat-id</p> -->
+    </div>
+    <p class="foot">感谢您的理解与支持</p>
+    <p class="foot">还有 <span id="countdown">10</span> 秒返回上一页</p>
+    <a class="home-btn" href="index.html">返回主页</a>
+  </div>
+<script>
+  (function () {
+    var seconds = 10;
+    var countdown = document.getElementById('countdown');
+    var timer = setInterval(function () {
+      seconds--;
+      countdown.textContent = seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        window.history.back();
+      }
+    }, 1000);
+  })();
+</script>
+</body>
+</html>

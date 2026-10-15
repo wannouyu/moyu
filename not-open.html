@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>功能暂未开放</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    padding: 48px 40px 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    animation: popIn 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+  h1 {
+    font-size: 22px;
+    color: #1f2329;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  p.desc {
+    font-size: 14px;
+    color: #646a73;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+  .countdown {
+    font-size: 14px;
+    color: #8f959e;
+    margin-bottom: 16px;
+  }
+  .countdown span {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    user-select: none;
+  }
+  .btn:active { transform: scale(0.97); opacity: 0.9; }
+  @media (hover: hover) {
+    .btn:hover { opacity: 0.9; }
+  }
+  @media (max-width: 480px) {
+    body { padding: 16px; }
+    .card { padding: 36px 24px 28px; border-radius: 14px; }
+    h1 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🚧</div>
+    <h1>功能暂未开放</h1>
+    <p class="desc">您访问的功能正在建设中，<br>敬请期待！</p>
+    <p class="countdown"><span id="num">5</span> 秒后自动返回首页</p>
+    <a class="btn" href="/" id="backBtn">立即返回首页</a>
+  </div>
+
+<script>
+  (function () {
+    var seconds = 5;
+    var numEl = document.getElementById('num');
+    var timer = setInterval(function () {
+      seconds--;
+      if (seconds > 0) {
+        numEl.textContent = seconds;
+      } else {
+        clearInterval(timer);
+        goBack();
+      }
+    }, 1000);
+
+    function goBack() {
+      // 优先返回上一页；若无历史记录则跳转到首页
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        window.location.href = '/';
+      }
+    }
+
+    document.getElementById('backBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      clearInterval(timer);
+      goBack();
+    });
+  })();
+</script>
+</body>
+</html>
