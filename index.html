@@ -11858,6 +11858,10 @@ h1, h2, h3, h4, h5,
   height: 100vh;
   position: relative;
   z-index: 0; }
+  #hero-carousel,
+  #hero-carousel .carousel-inner,
+  #hero-carousel .carousel-item {
+    height: 100%; }
   .hero-wrap .overlay {
     position: absolute;
     top: 0;
@@ -11893,14 +11897,28 @@ h1, h2, h3, h4, h5,
   color: #fff; }
   .slider-text h1 {
     font-size: 55px;
-    color: #fff;
+    display: inline-block;
+    padding: 0.12em 0.28em 0.16em;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 14px;
+    background: rgba(20, 32, 48, 0.42);
+    color: #f8fbff;
     line-height: 1.2;
-    font-weight: 200; }
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    -webkit-text-fill-color: currentColor;
+    text-shadow: 0 2px 8px rgba(8, 16, 28, 0.38);
+    box-shadow: 0 10px 28px rgba(8, 16, 28, 0.16);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); }
     @media (max-width: 991.98px) {
       .slider-text h1 {
         font-size: 40px; } }
     .slider-text h1 strong {
-      font-weight: 800; }
+      color: #bfeaf5;
+      font-weight: 700;
+      -webkit-text-fill-color: #bfeaf5;
+      text-shadow: 0 1px 8px rgba(8, 16, 28, 0.48); }
   .slider-text p {
     font-size: 20px;
     line-height: 1.5;
@@ -11932,6 +11950,28 @@ h1, h2, h3, h4, h5,
     .slider-text .btn-primary:hover, .slider-text .btn-primary:focus {
       background: #fff !important;
       color: #404044; }
+
+@media (max-width: 767.98px) {
+    .hero-wrap.js-fullheight {
+      height: 82vh !important;
+      height: 82svh !important;
+      min-height: 440px; }
+    .slider-text h1 {
+      font-size: clamp(28px, 7.6vw, 32px);
+      line-height: 1.18;
+      max-width: 100%;
+      padding: 0.16em 0.22em 0.2em;
+      border-radius: 12px; }
+    .slider-text p {
+      font-size: 16px; }
+}
+
+@media (max-width: 359.98px) {
+    .navbar-brand {
+      max-width: calc(100% - 110px);
+      font-size: 14px;
+      white-space: normal; }
+}
 
 .owl-carousel {
   position: relative; }
@@ -12227,6 +12267,72 @@ h1, h2, h3, h4, h5,
 
 .services .media-body h3 {
   font-size: 20px; }
+
+.home-services-section {
+  background: #f7f9fc !important; }
+  .home-services-section .home-topic-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 26px 22px;
+    background: #fff;
+    border: 1px solid #e9edf3;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(33, 45, 65, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .home-services-section .home-topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(33, 45, 65, 0.1); }
+  .home-services-section .home-topic-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px; }
+  .home-services-section .home-topic-card .icon {
+    display: flex;
+    flex: 0 0 48px;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 14px 0 0 !important;
+    border-radius: 14px; }
+  .home-services-section .home-topic-card .icon:before,
+  .home-services-section .home-topic-card .icon:after {
+    display: none; }
+  .home-services-section .home-topic-card .icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8; }
+  .home-services-section .home-topic-card .icon.color-1 {
+    color: #ee76ad; }
+  .home-services-section .home-topic-card .icon.color-2 {
+    color: #efac78; }
+  .home-services-section .home-topic-card .icon.color-3 {
+    color: #29bae4; }
+  .home-services-section .home-topic-card .icon.color-4 {
+    color: #42c98a; }
+  .home-services-section .home-topic-card .media-body {
+    flex: 1; }
+  .home-services-section .home-topic-card .media-body h3 {
+    margin: 0;
+    color: #253247;
+    font-size: 19px;
+    font-weight: 600; }
+  .home-services-section .home-topic-card .media-body p {
+    margin: 0;
+    color: #697586;
+    font-size: 14px;
+    line-height: 1.85;
+    text-align: left; }
+@media (max-width: 767.98px) {
+  .home-services-section .home-topic-card {
+    padding: 22px 20px; }
+}
 
 .list-services {
   margin-top: 40px;
@@ -12562,6 +12668,117 @@ textarea.form-control {
       transform: translate(-50%, -50%); }
     .ftco-footer-social li a:hover {
       color: #fff; }
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 24px;
+  background: linear-gradient(145deg, #172536 0%, #202e42 58%, #27394e 100%);
+  color: #d7e0eb; }
+  .site-footer:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #78d5ef 0%, #ee76ad 50%, #efac78 100%);
+    content: ''; }
+  .site-footer .row.mb-5 {
+    margin-bottom: 34px !important; }
+  .site-footer .ftco-footer-widget {
+    margin-bottom: 28px !important; }
+  .site-footer .ftco-footer-widget h2 {
+    position: relative;
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600; }
+  .site-footer .ftco-footer-widget h2:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 2px;
+    background: #78d5ef;
+    content: ''; }
+  .site-footer .ftco-footer-widget:first-child > h2 {
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 0.08em; }
+  .site-footer .ftco-footer-widget:first-child > h2:after {
+    background: linear-gradient(90deg, #78d5ef, #ee76ad); }
+  .site-footer .ftco-footer-widget p {
+    max-width: 34em;
+    color: #b9c5d3;
+    font-size: 14px;
+    line-height: 1.9; }
+  .site-footer .ftco-footer-widget ul li a {
+    display: inline-block !important;
+    padding: 5px 0 !important;
+    color: #b9c5d3;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease, transform 0.2s ease; }
+  .site-footer .ftco-footer-widget ul li a:hover,
+  .site-footer .ftco-footer-widget ul li a:focus {
+    color: #8fe1f5;
+    transform: translateX(3px); }
+  .site-footer .ftco-footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px; }
+  .site-footer .ftco-footer-social li {
+    margin: 0; }
+  .site-footer .ftco-footer-social li a {
+    display: flex;
+    float: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(215, 224, 235, 0.16);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #d7e0eb;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+  .site-footer .ftco-footer-social li a:hover,
+  .site-footer .ftco-footer-social li a:focus {
+    transform: translateY(-3px);
+    border-color: rgba(120, 213, 239, 0.65);
+    background: rgba(120, 213, 239, 0.14);
+    color: #fff; }
+  .site-footer .ftco-footer-social li a svg {
+    width: 18px;
+    height: 18px; }
+  .site-footer > .container > .row:last-child {
+    margin: 0;
+    padding-top: 18px;
+    border-top: 1px solid rgba(215, 224, 235, 0.12); }
+  .site-footer > .container > .row:last-child p {
+    margin: 0;
+    color: #93a2b4;
+    font-size: 13px; }
+  .site-footer > .container > .row:last-child a {
+    color: #d7e0eb; }
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .site-footer .row.mb-5 > .col-md {
+    flex: 0 0 50%;
+    max-width: 50%; }
+  .site-footer .ftco-footer-widget.ml-5 {
+    margin-left: 0 !important; }
+}
+@media (max-width: 767.98px) {
+  .site-footer {
+    padding: 54px 0 20px; }
+  .site-footer .row.mb-5 {
+    margin-bottom: 16px !important; }
+  .site-footer .ftco-footer-widget h2 {
+    margin-bottom: 16px; }
+}
 
 .footer-small-nav > li {
   display: inline-block; }
@@ -13494,7 +13711,7 @@ textarea.form-control {
       </div>
     </div>
     
-    <section class="ftco-section" style="background-color: white;">
+    <section class="ftco-section home-services-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-6 text-center heading-section ftco-animate">
@@ -13504,39 +13721,35 @@ textarea.form-control {
         </div>
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="d-flex justify-content-center"><div class="icon color-3 d-flex justify-content-center mb-3"><span class="align-self-center icon-lightbulb-o"></span></div></div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">创新</h3>
+            <div class="media block-6 services home-topic-card">
+              <div class="home-topic-heading"><div class="icon color-3"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18h6m-5 4h4m-5.5-7.5a6 6 0 1 1 7 0c-.8.6-1.3 1.2-1.5 2.5h-4c-.2-1.3-.7-1.9-1.5-2.5Z"/></svg></div><div class="media-body"><h3 class="heading">创新</h3></div></div>
+              <div class="media-body">
                 <p>创新需开放思维，勇于尝试。观察生活，发现问题，思考解决方案。学习新知，跨领域融合，激发灵感。实践探索，勇于失败，从错误中学习。持续改进，保持耐心，培养创新习惯
                 </p>
               </div>
             </div>      
           </div>
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="d-flex justify-content-center"><div class="icon color-1 d-flex justify-content-center mb-3"><span class="align-self-center icon-laptop"></span></div></div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">数码</h3>
+            <div class="media block-6 services home-topic-card">
+              <div class="home-topic-heading"><div class="icon color-1"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="13" rx="1.5"/><path d="M2.5 20h19l-1.5-3H4z"/></svg></div><div class="media-body"><h3 class="heading">数码</h3></div></div>
+              <div class="media-body">
                 <p>从基础操作开始，熟练掌握Windows了解电脑硬件，如CPU、内存、硬盘等。阅读专业书籍，学习编程语言如Python、Java。实践多动手组装电脑或维修。了解最新技术动态不断提升技能</p>
               </div>
             </div>      
           </div>
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="d-flex justify-content-center"><div class="icon color-2 d-flex justify-content-center mb-3"><span class="align-self-center icon-gear"></span></div></div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">架构</h3>
+            <div class="media block-6 services home-topic-card">
+              <div class="home-topic-heading"><div class="icon color-2"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5m-18 4 9 5 9-5"/></svg></div><div class="media-body"><h3 class="heading">架构</h3></div></div>
+              <div class="media-body">
                 <p>任何事情从开始到结束，关键在于规划与执行。首先明确目标，制定详细计划，分阶段实施。保持专注，及时调整策略以应对挑战。过程中，耐心与毅力不可或缺，不断学习，从错误中吸取教训。无论成功与否，都是成长</p>
               </div>
             </div>    
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-            <div class="media block-6 services d-block text-center">
-              <div class="d-flex justify-content-center"><div class="icon color-4 d-flex justify-content-center mb-3"><span class="align-self-center icon-live_help"></span></div></div>
-              <div class="media-body p-2 mt-3">
-                <h3 class="heading">社区</h3>
+            <div class="media block-6 services home-topic-card">
+              <div class="home-topic-heading"><div class="icon color-4"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 11.5a7.5 7.5 0 0 1-11.2 6.5L4 19l1.2-3.8A7.5 7.5 0 1 1 20 11.5Z"/><path d="M8.5 11.5h7m-7 3h4"/></svg></div><div class="media-body"><h3 class="heading">社区</h3></div></div>
+              <div class="media-body">
                 <p>遇到问题时，先冷静分析，确定问题根源.搜集相关信息，制定解决方案.若需帮助，不要犹豫寻求他人支持。尝试实施解决方案，观察效果，必要时调整策略.保持积极态度，从挑战中学习成长</p>
               </div>
             </div>      
@@ -13584,34 +13797,34 @@ textarea.form-control {
             </a>
             <div class="text">
               <h4 class="subheading">最新发布</h4>
-              <h2 class="heading"><a href="portfolio.html">“Artificial Intelligence”</a></h2>
+              <h2 class="heading"><a href="./not-open.html">“Artificial Intelligence”</a></h2>
               <p>大模型技术与应用已对金融等各行业产生较大影响，人工智能应用落地已迈入新阶段
                 。其次，人工智能赋能新型工业化，呈现“大小模型协同”“两端快、中间慢”等阶段特征，消费侧应用迭代加速，生产侧应用与行业场景融合不断深入
                 。此外，人工智能大模型行业发展新阶段中，机遇与挑战并存，尤其在金融、医疗、制造等领域，AI模型的实际应用正加速实现
                 。最后，人工智能技术快速发展，涉及多个领域，包括但不限于工业软件、智能客服、智能投顾等，推动社会发展的重要力量
                 。这些进展标志着人工智能技术的再次崛起，并在多个行业中发挥着越来越重要的作用。</p>
-              <p><a href="portfolio.html" class="btn btn-primary px-4">查看此贴</a></p>
+              <p><a href="./not-open.html" class="btn btn-primary px-4">查看此贴</a></p>
             </div>
           </div>
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="portfolio.html" class="image image-2 order-2" style="background-image: url('./work-2.jpg');" data-scrollax=" properties: { translateY: '-20%'}"></a>
+            <a href="./not-open.html" class="image image-2 order-2" style="background-image: url('./work-2.jpg');" data-scrollax=" properties: { translateY: '-20%'}"></a>
             <div class="text order-1">
               <h4 class="subheading">最近发布</h4>
-              <h2 class="heading"><a href="portfolio.html">云技术万物联网</a></h2>
+              <h2 class="heading"><a href="./not-open.html">云技术万物联网</a></h2>
               <p>通过数据的实时传输，实现远距离的事实操作这在医学界治病救人的重达提升，同时在娱乐方面也可以实现无需下载真正实现打开电脑手机随时使用数据内容的便利，云数据技术也可以用于安全方面
                 当我们不在家时可通过云数据来查看自家监控，同时也可以随时查看家人老人孩子做到无需在家也知道家的状况为你在外打拼也能安心。云数据带来的便利还有很多   
               </p>
-              <p><a href="portfolio.html" class="btn btn-primary px-4">查看此贴</a></p>
+              <p><a href="./not-open.html" class="btn btn-primary px-4">查看此贴</a></p>
             </div>
           </div>
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="portfolio.html" class="image" style="background-image: url('./chahua.jpg'); " data-scrollax=" properties: { translateY: '-20%'}"></a>
+            <a href="./not-open.html" class="image" style="background-image: url('./chahua.jpg'); " data-scrollax=" properties: { translateY: '-20%'}"></a>
             <div class="text">
               <h4 class="subheading">近期发布</h4>
-              <h2 class="heading"><a href="portfolio.html">摄影与插画</a></h2>
+              <h2 class="heading"><a href="./not-open.html">摄影与插画</a></h2>
               <p>摄影与插画，两种艺术形式，都以视觉为媒介，传达情感与故事。摄影捕捉现实瞬间，摄影是光与影的游戏，它记录真实世界中的一刹那，无论是自然风光、城市街景还是人物肖像，都能通过摄影师的视角展现出独特的魅力。每一张照片背后藏着一个故事，等待着观者去发现和解读。
                 插画则更自由，它不受现实限制，艺术家可以随心所欲地绘制心中所想。无论是细腻的铅笔素描，还是色彩斑斓的水彩画，插画都能以直观的方式展现创作者的内心世界，传递情感和思想。</p>
-              <p><a href="portfolio.html" class="btn btn-primary px-4">查看此贴</a></p>
+              <p><a href="./not-open.html" class="btn btn-primary px-4">查看此贴</a></p>
             </div>
           </div>
         </div>
@@ -13678,7 +13891,7 @@ textarea.form-control {
       </div>
     </section>
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <footer class="ftco-footer ftco-bg-dark ftco-section site-footer">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
@@ -13707,13 +13920,14 @@ textarea.form-control {
               <ul class="list-unstyled">
                 <li><a href="#" class="py-2 d-block">+ **** **** **MOYU</a></li>
                 <li><a href="#" class="py-2 d-block">+ **** **** **沫予</a></li>
-                <li><a href="https://wannouyu.github.io/moyu.github.io/" class="py-2 d-block">wannouyu.github.io/moyu.github.io/</a></li>
-                <li><a href="https://wannouyu.github.io/moyu.github.io/" class="py-2 d-block">https://wannouyu.github.io/moyu.github.io/</a></li>
+                <li><a href="wannouyu.github.io/moyu" class="py-2 d-block">wannouyu.github.io/moyu</a></li>
+                <li><a href="https://wannouyu.github.io/moyu/" class="py-2 d-block">hhttps://wannouyu.github.io/moyu/</a></li>
               </ul>
             </div>
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">关注我们</h2>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
                 <li class="ftco-animate"><a href="#" aria-label="Twitter" title="Twitter">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.6 8.6 0 0 1-2.72 1.04 4.28 4.28 0 0 0-7.3 3.9 12.13 12.13 0 0 1-8.8-4.46 4.28 4.28 0 0 0 1.33 5.72A4.24 4.24 0 0 1 2.8 9.7v.05a4.28 4.28 0 0 0 3.43 4.2 4.3 4.3 0 0 1-1.93.07 4.29 4.29 0 0 0 4 2.97A8.6 8.6 0 0 1 2 19.56a12.12 12.12 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.38-.01-.57A8.7 8.7 0 0 0 22.46 6z"/></svg>
